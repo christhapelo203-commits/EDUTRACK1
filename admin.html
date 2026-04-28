@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTrack - Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">EduTrack</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="students.html">Students</a></li>
+                    <li class="nav-item"><a class="nav-link" href="attendance.html">Attendance</a></li>
+                    <li class="nav-item"><a class="nav-link" href="homework.html">Homework</a></li>
+                    <li class="nav-item"><a class="nav-link" href="assessments.html">Assessments</a></li>
+                    <li class="nav-item"><a class="nav-link" href="daily-progress.html">Daily Progress</a></li>
+                    <li class="nav-item"><a class="nav-link" href="student-goals.html">Student Goals</a></li>
+                    <li class="nav-item"><a class="nav-link" href="progress-reports.html">Progress Reports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="communication.html">Communication</a></li>
+                    <li class="nav-item"><a class="nav-link" href="announcements.html">Announcements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="notifications.html">Notifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="parents.html">Parents</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h1>Admin Panel</h1>
+        <p>Manage users, system settings, and oversee all platform activities.</p>
+        
+        <!-- System Statistics -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>System Statistics</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <h3 id="totalUsers">0</h3>
+                            <p>Total Users</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <h3 id="totalStudents">0</h3>
+                            <p>Students</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <h3 id="totalTeachers">0</h3>
+                            <p>Teachers</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <h3 id="totalAdmins">0</h3>
+                            <p>Admins</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">User Management</h5>
+                        <p class="card-text">View and manage all registered users.</p>
+                        <button class="btn btn-primary" onclick="showUsers()">View Users</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Submitted Assessments</h5>
+                        <p class="card-text">View all submitted assessments and grades.</p>
+                        <button class="btn btn-info" onclick="showAssessments()">View Assessments</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Student Attendance</h5>
+                        <p class="card-text">Monitor attendance records for all students.</p>
+                        <button class="btn btn-warning" onclick="showAttendance()">View Attendance</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Progress Logs</h5>
+                        <p class="card-text">Review daily progress logs and behavior tracking.</p>
+                        <button class="btn btn-success" onclick="showProgressLogs()">View Logs</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Announcements</h5>
+                        <p class="card-text">Create system-wide announcements.</p>
+                        <button class="btn btn-secondary" onclick="createAnnouncement()">Create Announcement</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Reports</h5>
+                        <p class="card-text">Generate administrative reports.</p>
+                        <button class="btn btn-dark" onclick="generateReport()">Generate Report</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dynamic Content Areas -->
+        <div id="userList" class="mt-4" style="display: none;">
+            <h2>Registered Users</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="userTableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <div id="assessmentList" class="mt-4" style="display: none;">
+            <h2>Submitted Assessments</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Assessment</th>
+                        <th>Subject</th>
+                        <th>Score</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="assessmentTableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <div id="attendanceList" class="mt-4" style="display: none;">
+            <h2>Student Attendance Records</h2>
+            <div id="attendanceContent">
+                <!-- Individual student attendance will be loaded here -->
+            </div>
+        </div>
+
+        <div id="progressList" class="mt-4" style="display: none;">
+            <h2>Progress Logs</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Date</th>
+                        <th>Behavior</th>
+                        <th>Participation</th>
+                        <th>Effort</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody id="progressTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function loadStatistics() {
+            const users = JSON.parse(localStorage.getItem('edutrack_users') || '[]');
+            document.getElementById('totalUsers').textContent = users.length;
+            document.getElementById('totalStudents').textContent = users.filter(u => u.role === 'student').length;
+            document.getElementById('totalTeachers').textContent = users.filter(u => u.role === 'teacher').length;
+            document.getElementById('totalAdmins').textContent = users.filter(u => u.role === 'admin').length;
+        }
+
+        function showUsers() {
+            const users = JSON.parse(localStorage.getItem('edutrack_users') || '[]');
+            const tbody = document.getElementById('userTableBody');
+            tbody.innerHTML = '';
+            users.forEach(user => {
+                const row = `<tr>
+                    <td>${user.name}</td>
+                    <td>${user.email}</td>
+                    <td>${user.role}</td>
+                    <td><button class="btn btn-danger btn-sm" onclick="deleteUser('${user.email}')">Delete</button></td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+            document.getElementById('userList').style.display = 'block';
+            document.getElementById('assessmentList').style.display = 'none';
+            document.getElementById('attendanceList').style.display = 'none';
+            document.getElementById('progressList').style.display = 'none';
+        }
+
+        function deleteUser(email) {
+            const users = JSON.parse(localStorage.getItem('edutrack_users') || '[]');
+            const filtered = users.filter(u => u.email !== email);
+            localStorage.setItem('edutrack_users', JSON.stringify(filtered));
+            showUsers();
+            loadStatistics();
+        }
+
+        function showAssessments() {
+            // Mock assessment data - in a real app, this would come from a database
+            const mockAssessments = [
+                { student: 'John Doe', assessment: 'Math Quiz 1', subject: 'Mathematics', score: '90%', status: 'Submitted', date: '2026-04-15' },
+                { student: 'Jane Smith', assessment: 'Science Test', subject: 'Science', score: '95%', status: 'Graded', date: '2026-04-14' },
+                { student: 'Bob Johnson', assessment: 'English Essay', subject: 'English', score: '85%', status: 'Submitted', date: '2026-04-13' },
+                { student: 'Alice Brown', assessment: 'History Project', subject: 'History', score: '92%', status: 'Graded', date: '2026-04-12' }
+            ];
+
+            const tbody = document.getElementById('assessmentTableBody');
+            tbody.innerHTML = '';
+            mockAssessments.forEach(assessment => {
+                const row = `<tr>
+                    <td>${assessment.student}</td>
+                    <td>${assessment.assessment}</td>
+                    <td>${assessment.subject}</td>
+                    <td>${assessment.score}</td>
+                    <td>${assessment.status}</td>
+                    <td>${assessment.date}</td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+            document.getElementById('assessmentList').style.display = 'block';
+            document.getElementById('userList').style.display = 'none';
+            document.getElementById('attendanceList').style.display = 'none';
+            document.getElementById('progressList').style.display = 'none';
+        }
+
+        function showAttendance() {
+            // Mock attendance data
+            const mockAttendance = {
+                'John Doe': [
+                    { date: '2026-04-15', status: 'Present' },
+                    { date: '2026-04-14', status: 'Present' },
+                    { date: '2026-04-13', status: 'Late' },
+                    { date: '2026-04-12', status: 'Present' },
+                    { date: '2026-04-11', status: 'Absent' }
+                ],
+                'Jane Smith': [
+                    { date: '2026-04-15', status: 'Present' },
+                    { date: '2026-04-14', status: 'Present' },
+                    { date: '2026-04-13', status: 'Present' },
+                    { date: '2026-04-12', status: 'Present' },
+                    { date: '2026-04-11', status: 'Present' }
+                ],
+                'Bob Johnson': [
+                    { date: '2026-04-15', status: 'Late' },
+                    { date: '2026-04-14', status: 'Present' },
+                    { date: '2026-04-13', status: 'Absent' },
+                    { date: '2026-04-12', status: 'Present' },
+                    { date: '2026-04-11', status: 'Excused' }
+                ]
+            };
+
+            const content = document.getElementById('attendanceContent');
+            content.innerHTML = '';
+
+            Object.keys(mockAttendance).forEach(student => {
+                const studentCard = document.createElement('div');
+                studentCard.className = 'card mb-3';
+                studentCard.innerHTML = `
+                    <div class="card-header">
+                        <h5>${student}</h5>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${mockAttendance[student].map(record => `
+                                    <tr>
+                                        <td>${record.date}</td>
+                                        <td>${record.status}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+                content.appendChild(studentCard);
+            });
+
+            document.getElementById('attendanceList').style.display = 'block';
+            document.getElementById('userList').style.display = 'none';
+            document.getElementById('assessmentList').style.display = 'none';
+            document.getElementById('progressList').style.display = 'none';
+        }
+
+        function showProgressLogs() {
+            // Mock progress log data
+            const mockProgress = [
+                { student: 'John Doe', date: '2026-04-15', behavior: 'Excellent', participation: 'High', effort: 'Strong', notes: 'Great focus in class' },
+                { student: 'Jane Smith', date: '2026-04-15', behavior: 'Good', participation: 'Medium', effort: 'Good', notes: 'Participated well in group activity' },
+                { student: 'Bob Johnson', date: '2026-04-15', behavior: 'Needs Improvement', participation: 'Low', effort: 'Medium', notes: 'Distracted during lesson' },
+                { student: 'John Doe', date: '2026-04-14', behavior: 'Good', participation: 'High', effort: 'Strong', notes: 'Completed homework on time' },
+                { student: 'Jane Smith', date: '2026-04-14', behavior: 'Excellent', participation: 'High', effort: 'Strong', notes: 'Helped classmate with assignment' }
+            ];
+
+            const tbody = document.getElementById('progressTableBody');
+            tbody.innerHTML = '';
+            mockProgress.forEach(log => {
+                const row = `<tr>
+                    <td>${log.student}</td>
+                    <td>${log.date}</td>
+                    <td>${log.behavior}</td>
+                    <td>${log.participation}</td>
+                    <td>${log.effort}</td>
+                    <td>${log.notes}</td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+            document.getElementById('progressList').style.display = 'block';
+            document.getElementById('userList').style.display = 'none';
+            document.getElementById('assessmentList').style.display = 'none';
+            document.getElementById('attendanceList').style.display = 'none';
+        }
+
+        function createAnnouncement() {
+            const announcement = prompt('Enter announcement:');
+            if (announcement) {
+                alert('Announcement created: ' + announcement);
+            }
+        }
+
+        function generateReport() {
+            alert('Report generated! (Mock functionality)');
+        }
+
+        // Check if admin and load statistics
+        const currentUser = JSON.parse(localStorage.getItem('current_user') || 'null');
+        if (!currentUser || currentUser.role !== 'admin') {
+            alert('Access denied! Admins only.');
+            window.location.href = 'login.html';
+        } else {
+            loadStatistics();
+        }
+    </script>
+</body>
+</html>

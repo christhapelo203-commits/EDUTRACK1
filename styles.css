@@ -1,0 +1,474 @@
+/* EduTrack Custom Styles */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    min-height: 100vh;
+    margin: 0;
+    color: #ecf0f1;
+}
+
+/* Default to Dark Mode */
+.container {
+    background-color: rgba(44, 62, 80, 0.95);
+    color: #ecf0f1;
+}
+
+.navbar {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: white !important;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #e0e0e0 !important;
+}
+
+.card {
+    background-color: rgba(52, 73, 94, 0.9);
+    color: #ecf0f1;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-outline-light {
+    border-color: #ecf0f1;
+    color: #ecf0f1;
+}
+
+.btn-outline-light:hover {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+.text-muted {
+    color: #bdc3c7 !important;
+}
+
+.bg-light {
+    background-color: rgba(52, 73, 94, 0.8) !important;
+}
+
+.border {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Custom Scrollbar for Dark Mode */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #34495e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #7f8c8d 0%, #95a5a6 100%);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #95a5a6 0%, #bdc3c7 100%);
+}
+
+/* Hero Section Styling */
+.hero-section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="60" r="1" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+    opacity: 0.5;
+}
+
+/* Feature Icons */
+.feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    color: white;
+    font-size: 2rem;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Service Icons */
+.service-icon {
+    color: #667eea;
+    font-size: 1.5rem;
+}
+
+/* Legal Icons */
+.legal-icon {
+    color: #667eea;
+    font-size: 1.5rem;
+}
+
+/* Compliance Icons */
+.compliance-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+/* Value Icons */
+.value-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Achievement Icons */
+.achievement-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    color: white;
+    font-size: 2rem;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Gradient Background Primary */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Light Cards */
+.card.bg-white,
+.card.bg-white .card-body,
+.card.bg-white .card-header {
+    background-color: #ffffff;
+    color: #2c3e50;
+}
+
+.card.bg-white .text-muted {
+    color: #6c757d !important;
+}
+
+/* Contact Legal Item */
+.contact-legal-item {
+    padding: 15px;
+    margin: 10px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+/* Dark Mode Support */
+.dark-mode {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #ecf0f1;
+}
+
+.dark-mode .container {
+    background-color: rgba(44, 62, 80, 0.95);
+    color: #ecf0f1;
+}
+
+.dark-mode .navbar {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.dark-mode .card {
+    background-color: rgba(52, 73, 94, 0.9);
+    color: #ecf0f1;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .btn-outline-light {
+    border-color: #ecf0f1;
+    color: #ecf0f1;
+}
+
+.dark-mode .btn-outline-light:hover {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+.dark-mode .text-muted {
+    color: #bdc3c7 !important;
+}
+
+.dark-mode .bg-light {
+    background-color: rgba(52, 73, 94, 0.8) !important;
+}
+
+.dark-mode .border {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 0;
+    }
+
+    .display-4 {
+        font-size: 2.5rem;
+    }
+
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .compliance-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .value-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Animation Effects */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+.dark-mode ::-webkit-scrollbar-track {
+    background: #34495e;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #7f8c8d 0%, #95a5a6 100%);
+}
+
+/* Focus States */
+.btn:focus,
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* Loading Animation */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.trusted-partners img {
+    max-width: 100%;
+    opacity: 0.72;
+    filter: grayscale(100%);
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.trusted-partners img:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+.testimonial-card {
+    border: none;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.testimonial-card .fa-quote-left {
+    color: #67d3ff;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.95), rgba(118, 75, 162, 0.95));
+}
+
+.cta-section .btn-light {
+    color: #2c3e50;
+}
+
+.cta-section .btn-outline-light {
+    border-color: rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+}
+
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.table thead th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    font-weight: 600;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(79, 172, 254, 0.1);
+}
+
+.alert {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.list-group-item {
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.badge {
+    font-size: 0.8em;
+}
+
+/* Chat styles */
+.border.p-3 {
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    max-height: 300px;
+}
+
+/* Calendar styles */
+.table-bordered {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #dee2e6;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin-top: 10px;
+    }
+    
+    .navbar-nav {
+        text-align: center;
+    }
+    
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #ecf0f1;
+}
+
+body.dark-mode .container {
+    background-color: rgba(44, 62, 80, 0.95);
+    color: #ecf0f1;
+}
+
+body.dark-mode .navbar {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+body.dark-mode .card {
+    background-color: rgba(52, 73, 94, 0.9);
+    color: #ecf0f1;
+}
+
+body.dark-mode .table thead th {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+body.dark-mode .alert {
+    background-color: rgba(52, 73, 94, 0.9);
+    color: #ecf0f1;
+}

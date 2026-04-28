@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTrack - Attendance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">EduTrack</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="students.html">Students</a></li>
+                    <li class="nav-item"><a class="nav-link" href="attendance.html">Attendance</a></li>
+                    <li class="nav-item"><a class="nav-link" href="homework.html">Homework</a></li>
+                    <li class="nav-item"><a class="nav-link" href="assessments.html">Assessments</a></li>
+                    <li class="nav-item"><a class="nav-link" href="daily-progress.html">Daily Progress</a></li>
+                    <li class="nav-item"><a class="nav-link" href="student-goals.html">Student Goals</a></li>
+                    <li class="nav-item"><a class="nav-link" href="progress-reports.html">Progress Reports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="communication.html">Communication</a></li>
+                    <li class="nav-item"><a class="nav-link" href="announcements.html">Announcements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="notifications.html">Notifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="parents.html">Parents</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h1>Attendance</h1>
+        <p>Mark daily attendance (present/absent/late/excused) with optimistic UI for instant feedback.</p>
+        <div class="mt-6">
+            <h2>Today's Attendance</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td id="status-john">Not Marked</td>
+                        <td>
+                            <button class="btn btn-success btn-sm" onclick="markAttendance('john', 'Present')">Present</button>
+                            <button class="btn btn-warning btn-sm" onclick="markAttendance('john', 'Late')">Late</button>
+                            <button class="btn btn-danger btn-sm" onclick="markAttendance('john', 'Absent')">Absent</button>
+                            <button class="btn btn-info btn-sm" onclick="markAttendance('john', 'Excused')">Excused</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td id="status-jane">Not Marked</td>
+                        <td>
+                            <button class="btn btn-success btn-sm" onclick="markAttendance('jane', 'Present')">Present</button>
+                            <button class="btn btn-warning btn-sm" onclick="markAttendance('jane', 'Late')">Late</button>
+                            <button class="btn btn-danger btn-sm" onclick="markAttendance('jane', 'Absent')">Absent</button>
+                            <button class="btn btn-info btn-sm" onclick="markAttendance('jane', 'Excused')">Excused</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bob Johnson</td>
+                        <td id="status-bob">Not Marked</td>
+                        <td>
+                            <button class="btn btn-success btn-sm" onclick="markAttendance('bob', 'Present')">Present</button>
+                            <button class="btn btn-warning btn-sm" onclick="markAttendance('bob', 'Late')">Late</button>
+                            <button class="btn btn-danger btn-sm" onclick="markAttendance('bob', 'Absent')">Absent</button>
+                            <button class="btn btn-info btn-sm" onclick="markAttendance('bob', 'Excused')">Excused</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        function markAttendance(student, status) {
+            document.getElementById('status-' + student).textContent = status;
+        }
+    </script>
+</body>
+</html>
